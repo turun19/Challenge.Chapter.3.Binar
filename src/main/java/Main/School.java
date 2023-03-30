@@ -20,7 +20,6 @@ public class School implements Calculation{
         }
     }
 
-
     @Override
     public double getMean() {
         double value = 0.0;
@@ -28,8 +27,10 @@ public class School implements Calculation{
         for(String i: gradeByClass){
             value += Double.parseDouble(i);
         }
+        double result = value / count;
+        double round = Math.round(result);
 
-        return value/count;
+        return round;
     }
 
     @Override

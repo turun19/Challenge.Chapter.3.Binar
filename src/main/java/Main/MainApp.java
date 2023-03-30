@@ -61,7 +61,7 @@ public class MainApp {
                     pilih = showMenuFile(scan, strip, SCHOOL_FILE_PATH);
                     kondisi = pilih == 1;
                 }
-                case 0 -> kondisi = true;
+                case 0 -> kondisi = false;
                 default -> System.out.println("Pilihan Tidak Ada");
             }
         } while (kondisi);

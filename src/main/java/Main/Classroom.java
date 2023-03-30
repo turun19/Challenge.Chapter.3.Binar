@@ -30,14 +30,17 @@ public class Classroom implements Calculation{
 
     @Override
     public double getMean(){
-        var value = 0.0;
+        double value = 0.0;
+        double bulat = 0;
         var count = studentsGrade.size();
 
         for(String str: studentsGrade){
             value += Integer.parseInt(str);
         }
+        double pembagian = value/count;
+        double round = Math.round(pembagian);
 
-        return (count > 0) ? value/count : 0;
+        return (count > 0) ? round : 0;
     }
 
     @Override
