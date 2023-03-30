@@ -1,0 +1,44 @@
+Berikut Rekap Nilai Setiap Kelas:
+
+Nama Kelas	: KelasA
+Rata-Rata	: 8.391304347826088
+Modus(n)	: 7 (7)
+Median		: 8
+
+Nama Kelas	: KelasB
+Rata-Rata	: 8.115384615384615
+Modus(n)	: 7 (8)
+Median		: 8
+
+Nama Kelas	: KelasC
+Rata-Rata	: 8.391304347826088
+Modus(n)	: 7 (7)
+Median		: 8
+
+Nama Kelas	: KelasD
+Rata-Rata	: 8.346153846153847
+Modus(n)	: 7 (9)
+Median		: 8
+
+Nama Kelas	: KelasE
+Rata-Rata	: 8.391304347826088
+Modus(n)	: 7 (7)
+Median		: 8
+
+Nama Kelas	: KelasF
+Rata-Rata	: 8.391304347826088
+Modus(n)	: 7 (7)
+Median		: 8
+
+Nama Kelas	: KelasG
+Rata-Rata	: 8.23076923076923
+Modus(n)	: 7 (8)
+Median		: 8
+
+Nama Kelas	: KelasH
+Rata-Rata	: 8.321428571428571
+Modus(n)	: 7 (9)
+Median		: 8
+
+*n = banyak data
+
