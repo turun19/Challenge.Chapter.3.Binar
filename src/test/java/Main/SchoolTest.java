@@ -1,6 +1,7 @@
 package Main;
 
 import org.junit.jupiter.api.*;
+import org.opentest4j.AssertionFailedError;
 
 
 import java.io.BufferedReader;
@@ -50,6 +51,7 @@ public class SchoolTest {
     }
 
     @Test
+    @DisplayName("Test Median Positive")
     public void getMeanTest() throws IOException {
         readFile();
         School schl = new School(Arrays.asList(name), gradeByClass);
@@ -58,7 +60,8 @@ public class SchoolTest {
     }
 
     @Test
-    public void TestMedian() throws IOException {
+    @DisplayName("Test Median Positive")
+    public void getMedianTest() throws IOException {
         readFile();
         School schl = new School(Arrays.asList(name), gradeByClass);
         assertEquals("8", schl.getMedian());
@@ -66,10 +69,42 @@ public class SchoolTest {
     }
 
     @Test
+    @DisplayName("Test Median Positive")
     public void getModusTest() throws IOException {
         readFile();
         School schl = new School(Arrays.asList(name), gradeByClass);
         assertEquals("7 (62)", schl.getModus());
+    }
+
+    @Test
+    @DisplayName("Test Median Negative")
+    public void testMedianError() throws IOException {
+        readFile();
+        School schl = new School(Arrays.asList(name), gradeByClass);;
+        assertThrows(AssertionFailedError.class, ()->{
+            assertEquals(90, schl.getMean());
+        });
+    }
+
+    @Test
+    @DisplayName("Test Modus Negative")
+    public void testModusError() throws IOException {
+        readFile();
+        School schl = new School(Arrays.asList(name), gradeByClass);
+        assertThrows(AssertionFailedError.class, ()->{
+            assertEquals("10", schl.getModus());
+        });
+    }
+
+    @Test
+    @DisplayName("Test Mean Negative")
+    public void testMeanError() throws IOException {
+        readFile();
+        School schl = new School(Arrays.asList(name), gradeByClass);
+        assertThrows(AssertionFailedError.class, ()->{
+            assertEquals(90, schl.getMean());
+
+        });
     }
 
 }

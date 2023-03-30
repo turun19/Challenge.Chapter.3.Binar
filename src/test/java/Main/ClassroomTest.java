@@ -1,6 +1,9 @@
 package Main;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.mockito.internal.util.io.IOUtil;
 import org.opentest4j.AssertionFailedError;
 
 
@@ -19,6 +22,8 @@ public class ClassroomTest {
     private static final List<Classroom> classroomList = new ArrayList<>();
     private static final List<String> className = new ArrayList<>();
     private static final List<String> gradeByClass = new ArrayList<>();
+    private static String name;
+
 
 
 
@@ -34,7 +39,7 @@ public class ClassroomTest {
             while ((line = br.readLine()) != null) {
                 var list = List.of(line.split(";"));
                 strArr.addAll(list);
-                var name = strArr.get(0);
+                name = strArr.get(0);
                 className.add(name);
                 strArr.remove(0);
                 classroomList.add(new Classroom(name, strArr));
@@ -49,17 +54,14 @@ public class ClassroomTest {
             if (br != null) br.close();
         }
     }
-    public static void coba() throws IOException {
-        readFile();
-    Classroom cls = new Classroom("Fathur", gradeByClass);
-}
+    
 
     @Test
     @DisplayName("Test Mean Positif")
     public void getMeanTest() throws IOException {
         readFile();
-        Classroom cls = new Classroom(className.get(0), gradeByClass);
-        assertEquals(8.0, cls.getMean());
+        Classroom cls = new Classroom(className.get(5), gradeByClass);
+        assertEquals(8.318181818181818, cls.getMean());
 
     }
 
@@ -67,7 +69,7 @@ public class ClassroomTest {
     @DisplayName("Test Median Positif")
     public void getMedianTest() throws IOException {
         readFile();
-        Classroom cls = new Classroom(className.get(0), gradeByClass);
+        Classroom cls = new Classroom(name, gradeByClass);
         assertEquals("8", cls.getMedian());
 
     }

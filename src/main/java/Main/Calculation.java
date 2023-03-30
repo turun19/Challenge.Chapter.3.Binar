@@ -10,7 +10,7 @@ public interface Calculation {
 
     String getMedian();
 
-    default List<String> sortAsNumbers(Collection<String> collection) {
+    default List<String> sortAsNumbers(Collection<String> collection) { // stream
         return collection
                 .stream()
                 .map(Integer::valueOf)
