@@ -96,6 +96,7 @@ public class ClassroomTest {
         readFile();
         assertThrows(AssertionFailedError.class, ()->{
             assertEquals(90, cls.getMean());
+
         });
     }
 }
