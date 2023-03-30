@@ -14,9 +14,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SchoolTest {
-    String[] nilai = new String[]{"10", "9", "8", "7", "8", "9", "8", "6", "6", "7", "9", "8", "7", "9", "10", "9", "8",};
+    String[] nilai = new String[]{"10", "9", "8", "7", "8", "9", "8", "6", "6", "7", "9", "8", "7", "9", "10", "9"};
     String[] name = new String[]{"Fathur", "Rizqy", "Binar"};
-    private final School schl = new School(Arrays.asList(name), Arrays.asList(nilai));
     private static final String GRADE_FILE_PATH = "D:\\Fathur Files\\Kuliah Semester 6\\Binarian Back End Java\\Chapter 3\\Challenge.Chapter.3.Binar\\res\\data_sekolah.csv";
     private static final List<School> schools = new ArrayList<>();
     private static final List<String> className = new ArrayList<>();
@@ -53,13 +52,15 @@ public class SchoolTest {
     @Test
     public void getMeanTest() throws IOException {
         readFile();
-        assertEquals(8.0, schl.getMean());
+        School schl = new School(Arrays.asList(name), gradeByClass);
+        assertEquals(8.318181818181818, schl.getMean());
 
     }
 
     @Test
     public void TestMedian() throws IOException {
         readFile();
+        School schl = new School(Arrays.asList(name), gradeByClass);
         assertEquals("8", schl.getMedian());
 
     }
@@ -67,7 +68,8 @@ public class SchoolTest {
     @Test
     public void getModusTest() throws IOException {
         readFile();
-        assertEquals("8 (5)", schl.getModus());
+        School schl = new School(Arrays.asList(name), gradeByClass);
+        assertEquals("7 (62)", schl.getModus());
     }
 
 }

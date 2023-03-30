@@ -15,11 +15,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ClassroomTest {
     String[] nilai = new String[]{"10", "9", "8", "7", "8", "9", "8", "6", "6", "7", "9", "8", "7", "9", "10", "9", "8", "7", "7", "6", "7", "8", "9", "10", "9", "8", "6", "7"};
-    private final Classroom cls = new Classroom("Fathur", Arrays.asList(nilai));
     private static final String GRADE_FILE_PATH = "D:\\Fathur Files\\Kuliah Semester 6\\Binarian Back End Java\\Chapter 3\\Challenge.Chapter.3.Binar\\res\\data_sekolah.csv";
     private static final List<Classroom> classroomList = new ArrayList<>();
     private static final List<String> className = new ArrayList<>();
     private static final List<String> gradeByClass = new ArrayList<>();
+
+
 
     private static void readFile() throws IOException {
         BufferedReader br = null;
@@ -48,11 +49,16 @@ public class ClassroomTest {
             if (br != null) br.close();
         }
     }
+    public static void coba() throws IOException {
+        readFile();
+    Classroom cls = new Classroom("Fathur", gradeByClass);
+}
 
     @Test
     @DisplayName("Test Mean Positif")
     public void getMeanTest() throws IOException {
         readFile();
+        Classroom cls = new Classroom(className.get(0), gradeByClass);
         assertEquals(8.0, cls.getMean());
 
     }
@@ -61,6 +67,7 @@ public class ClassroomTest {
     @DisplayName("Test Median Positif")
     public void getMedianTest() throws IOException {
         readFile();
+        Classroom cls = new Classroom(className.get(0), gradeByClass);
         assertEquals("8", cls.getMedian());
 
     }
@@ -69,13 +76,16 @@ public class ClassroomTest {
     @DisplayName("Test Modus Positif")
     public void getModusTest() throws IOException {
         readFile();
-        assertEquals("7 (7)", cls.getModus());
+        Classroom cls = new Classroom(className.get(0), gradeByClass);
+        cls.generateClassTxt();
+        assertEquals("7 (62)", cls.getModus());
     }
 
     @Test
     @DisplayName("Test Median Negative")
     public void testMedianError() throws IOException {
         readFile();
+        Classroom cls = new Classroom("Fathur", gradeByClass);
         assertThrows(AssertionFailedError.class, ()->{
            assertEquals(90, cls.getMean());
         });
@@ -85,6 +95,7 @@ public class ClassroomTest {
     @DisplayName("Test Modus Negative")
     public void testModusError() throws IOException {
         readFile();
+        Classroom cls = new Classroom("Fathur", gradeByClass);
         assertThrows(AssertionFailedError.class, ()->{
             assertEquals("10", cls.getModus());
         });
@@ -94,6 +105,7 @@ public class ClassroomTest {
     @DisplayName("Test Mean Negative")
     public void testMeanError() throws IOException {
         readFile();
+        Classroom cls = new Classroom("Fathur", gradeByClass);
         assertThrows(AssertionFailedError.class, ()->{
             assertEquals(90, cls.getMean());
 

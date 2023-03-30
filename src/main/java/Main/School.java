@@ -27,10 +27,8 @@ public class School implements Calculation{
         for(String i: gradeByClass){
             value += Double.parseDouble(i);
         }
-        double result = value / count;
-        double round = Math.round(result);
 
-        return round;
+        return value/count;
     }
 
     @Override
