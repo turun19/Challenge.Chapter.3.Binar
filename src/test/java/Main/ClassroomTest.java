@@ -50,7 +50,7 @@ public class ClassroomTest {
     @DisplayName("Test Mean Positif")
     public void getMeanTest() throws IOException {
         readFile();
-        Classroom cls = new Classroom(className.get(5), gradeByClass);
+        Classroom cls = new Classroom(className.get(0), gradeByClass);
         assertEquals(8.318181818181818, cls.getMean());
 
     }
